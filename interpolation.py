@@ -1,8 +1,10 @@
-#%%
+# interpolation 예시
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.interpolate import interp1d
+
+
 
 def gcd(a, b):
     while b != 0:
@@ -20,7 +22,18 @@ def interpolate(df, kind):
     
     return temp_df
 
+
+def read_data():
+    return None
+
+
+def save_img():
+    return None
+
+
 def main():
+
+
     df = pd.read_csv("AT50_e.csv")
 
     df_filtered_origin = df.loc[~((df['Time'] > 20.) & (df['Time'] < 50.) |
@@ -43,7 +56,6 @@ def main():
         temp = gcd(temp, interval_list[i])
 
     interval = temp
-
     time_cursor = df_filtered.Time[0]
     last_time = df_filtered.iloc[-1].Time
     time_set = set(df_filtered['Time'])
@@ -118,8 +130,9 @@ def main():
 
     plt.show()
 
+
+
 if __name__ == "__main__":
     main()
     plt.show()
 
-# %%
